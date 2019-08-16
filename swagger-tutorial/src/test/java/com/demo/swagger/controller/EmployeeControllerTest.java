@@ -68,6 +68,11 @@ public class EmployeeControllerTest {
 	}
 	
 	
+	@Test
+	public void testCreateEmployee() {
+		String inputToJSON = "{\"id\":5,\"firstName\":\"rst\",\"lastName\":\"pqr\",\"emailId\":\"pqr@gmail.com\"}";
+		Employee employee = new Employee(5, "rst", "pqr", "pqr@gmail.com");
+	}
 	
 	
 
