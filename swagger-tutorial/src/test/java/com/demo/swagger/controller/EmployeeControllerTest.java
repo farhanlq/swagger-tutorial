@@ -69,9 +69,17 @@ public class EmployeeControllerTest {
 	
 	
 	@Test
-	public void testCreateEmployee() {
+	public void testCreateEmployee() throws Exception {
 		String inputToJSON = "{\"id\":5,\"firstName\":\"rst\",\"lastName\":\"pqr\",\"emailId\":\"pqr@gmail.com\"}";
 		Employee employee = new Employee(5, "rst", "pqr", "pqr@gmail.com");
+		mockMvc.perform(MockMvcRequestBuilders.post("/api/v1/employees")
+				.contentType(MediaType.APPLICATION_JSON)
+				.content(inputToJSON))
+				.andExpect(MockMvcResultMatchers.status().isCreated())
+				.andExpect(MockMvcResultMatchers.jsonPath("$.id", Matchers.is(3)))
+				.andExpect(MockMvcResultMatchers.jsonPath("$.firstName", Matchers.is("abc")))
+				.andExpect(MockMvcResultMatchers.jsonPath("$.lastName", Matchers.is("cdfd")))
+				.andExpect(MockMvcResultMatchers.jsonPath("$.emailId", Matchers.is("abcs@ymail.com")));
 	}
 	
 	
