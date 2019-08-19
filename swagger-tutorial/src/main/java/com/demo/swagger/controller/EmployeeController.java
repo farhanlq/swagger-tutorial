@@ -57,9 +57,9 @@ public class EmployeeController {
 
 	@ApiOperation(value = "Add an employee")
 	@PostMapping("/employees")
-	public Employee createEmployee(
+	public ResponseEntity<Employee> createEmployee(
 			@ApiParam(value = "Employee object store in database table", required = true) @Valid @RequestBody Employee employee) {
-		return employeeRepository.save(employee);
+		return ResponseEntity.ok().body(employeeRepository.save(employee));
 	}
 
 	@ApiOperation(value = "Update an employee")
