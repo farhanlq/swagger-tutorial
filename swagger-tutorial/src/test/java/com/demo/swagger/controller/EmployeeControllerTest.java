@@ -86,14 +86,5 @@ public class EmployeeControllerTest {
 		assertEquals(HttpStatus.OK.value(), response.getStatus());
 
 }
-	
-//	mockMvc.perform(MockMvcRequestBuilders.post("/api/v1/employees").contentType(MediaType.APPLICATION_JSON)
-//	.content(inputToJSON))
-//	.andExpect(MockMvcResultMatchers.status().isCreated());
-//	.andExpect(MockMvcResultMatchers.jsonPath("$.id").value(5))
-//	.andExpect(MockMvcResultMatchers.jsonPath("$.firstName").value("rst"))
-//	.andExpect(MockMvcResultMatchers.jsonPath("$.lastName").value("pqr"))
-//	.andExpect(MockMvcResultMatchers.jsonPath("$.emailId").value("pqr@gmail.com"));
-
 
 }
