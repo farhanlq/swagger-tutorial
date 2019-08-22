@@ -83,7 +83,7 @@ public class EmployeeControllerTest {
 
 		MockHttpServletResponse response = result.getResponse();
 
-		assertEquals(HttpStatus.OK, response.getStatus());
+		assertEquals(HttpStatus.OK.value(), response.getStatus());
 
 }
 	
